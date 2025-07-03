@@ -1,0 +1,216 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Mabella Arabic Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Mabella",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary Color",
+        "default": "#f3a73f"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary Color",
+        "default": "#ec4899"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text Color",
+        "default": "#1f2937"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background Color",
+        "default": "#ffffff"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Heading Font",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body Font",
+        "default": "assistant_n4"
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      {
+        "type": "select",
+        "id": "layout_direction",
+        "label": "Layout Direction",
+        "options": [
+          {
+            "value": "rtl",
+            "label": "Right to Left (Arabic)"
+          },
+          {
+            "value": "ltr",
+            "label": "Left to Right"
+          }
+        ],
+        "default": "rtl"
+      }
+    ]
+  },
+  {
+    "name": "Homepage Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero Background Image"
+      },
+      {
+        "type": "url",
+        "id": "hero_video",
+        "label": "Hero Video URL (MP4)"
+      },
+      {
+        "type": "text",
+        "id": "hero_title",
+        "label": "Hero Title",
+        "default": "مجموعة الخريف الجديدة"
+      },
+      {
+        "type": "text",
+        "id": "hero_subtitle",
+        "label": "Hero Subtitle",
+        "default": "اكتشفي أحدث صيحات الموضة"
+      },
+      {
+        "type": "text",
+        "id": "hero_button_text",
+        "label": "Primary Button Text",
+        "default": "تسوقي الآن"
+      },
+      {
+        "type": "text",
+        "id": "hero_secondary_button",
+        "label": "Secondary Button Text",
+        "default": "اكتشفي المجموعة"
+      }
+    ]
+  },
+  {
+    "name": "Featured Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "featured_title",
+        "label": "Section Title",
+        "default": "المنتجات المميزة"
+      },
+      {
+        "type": "text",
+        "id": "featured_subtitle",
+        "label": "Section Subtitle",
+        "default": "اكتشفي أحدث وأجمل قطعنا المختارة بعناية خاصة لك"
+      },
+      {
+        "type": "collection",
+        "id": "featured_collection",
+        "label": "Featured Collection"
+      },
+      {
+        "type": "range",
+        "id": "products_to_show",
+        "min": 3,
+        "max": 12,
+        "step": 3,
+        "label": "Number of Products to Show",
+        "default": 6
+      }
+    ]
+  },
+  {
+    "name": "Bestsellers",
+    "settings": [
+      {
+        "type": "text",
+        "id": "bestsellers_title",
+        "label": "Section Title",
+        "default": "الأكثر مبيعاً"
+      },
+      {
+        "type": "text",
+        "id": "bestsellers_subtitle",
+        "label": "Section Subtitle",
+        "default": "القطع التي أحبتها عميلاتنا أكثر من غيرها"
+      },
+      {
+        "type": "collection",
+        "id": "bestsellers_collection",
+        "label": "Bestsellers Collection"
+      }
+    ]
+  },
+  {
+    "name": "About Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "about_title",
+        "label": "About Title",
+        "default": "مابيلا"
+      },
+      {
+        "type": "richtext",
+        "id": "about_content",
+        "label": "About Content",
+        "default": "<p>مابيلا هو أكثر من مجرد متجر أزياء، إنه حلم تحقق ليصبح وجهة كل امرأة تبحث عن الأناقة والتميز. بدأت رحلتنا من شغف عميق بالموضة والجمال، ورؤية واضحة لتقديم أزياء نسائية فاخرة تجمع بين الأصالة العربية والتصاميم العصرية المعاصرة.</p><p>نؤمن في مابيلا أن كل امرأة تستحق أن تشعر بالثقة والجمال، لذلك نحرص على انتقاء كل قطعة بعناية فائقة لتناسب جميع المناسبات وتعكس شخصيتك المتميزة.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "about_image",
+        "label": "About Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "about_image_2",
+        "label": "About Image 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "about_image_3",
+        "label": "About Image 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "about_image_4",
+        "label": "About Image 4"
+      }
+    ]
+  },
+  {
+    "name": "Store Location",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "store_image",
+        "label": "Store Image"
+      }
+    ]
+  }
+]
