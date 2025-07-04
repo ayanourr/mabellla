@@ -245,6 +245,9 @@ const Footer: React.FC = () => {
               <p className="text-gray-400 text-sm">
                 © 2024 مابيلا. جميع الحقوق محفوظة.
               </p>
+              <p className="text-gray-500 text-xs mt-1">
+                تطوير وتصميم: <span className="text-gold-400 font-medium">آية التميمي</span>
+              </p>
             </div>
             
             <div className="flex flex-wrap justify-center md:justify-end space-x-6 space-x-reverse text-sm">
