@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, ShoppingBag, Menu, X, User, Heart } from 'lucide-react';
+import { Search, ShoppingBag, Menu, X, User, Heart, Crown } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { Link, useLocation } from 'react-router-dom';
@@ -27,80 +27,98 @@ const Header: React.FC<HeaderProps> = ({ onCartClick, onSearchChange }) => {
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+    <header className="bg-white/95 backdrop-blur-md shadow-2xl sticky top-0 z-50 border-b border-gold-100">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img 
-              src="/images/Untitled design.png" 
-              alt="مابيلا" 
-              className="h-12 w-auto"
-            />
+          <Link to="/" className="flex items-center group">
+            <div className="relative">
+              <img 
+                src="/images/Untitled design.png" 
+                alt="مابيلا - بوتيك الأناقة النسائية" 
+                className="h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute -top-1 -right-1">
+                <Crown className="w-4 h-4 text-gold-500" />
+              </div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 space-x-reverse">
+          <nav className="hidden lg:flex items-center space-x-12 space-x-reverse">
             <Link 
               to="/" 
-              className={`font-medium transition-colors ${
+              className={`font-medium text-lg transition-all duration-300 relative group ${
                 isActive('/') 
                   ? 'text-gold-600' 
                   : 'text-gray-700 hover:text-gold-600'
               }`}
             >
               الرئيسية
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-500 to-rose-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
               to="/products" 
-              className={`font-medium transition-colors ${
+              className={`font-medium text-lg transition-all duration-300 relative group ${
                 isActive('/products') 
                   ? 'text-gold-600' 
                   : 'text-gray-700 hover:text-gold-600'
               }`}
             >
-              المنتجات
+              مجموعاتنا الفاخرة
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-500 to-rose-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <a href="/#categories" className="text-gray-700 hover:text-gold-600 font-medium transition-colors">الفئات</a>
-            <a href="/#about" className="text-gray-700 hover:text-gold-600 font-medium transition-colors">من نحن</a>
-            <a href="/#location" className="text-gray-700 hover:text-gold-600 font-medium transition-colors">موقعنا</a>
+            <a href="/#categories" className="text-gray-700 hover:text-gold-600 font-medium text-lg transition-all duration-300 relative group">
+              عالم الموضة
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-500 to-rose-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="/#about" className="text-gray-700 hover:text-gold-600 font-medium text-lg transition-all duration-300 relative group">
+              قصتنا
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-500 to-rose-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="/#location" className="text-gray-700 hover:text-gold-600 font-medium text-lg transition-all duration-300 relative group">
+              بوتيكنا
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-500 to-rose-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
           </nav>
 
-          {/* Search Bar */}
-          <div className="hidden md:flex items-center bg-gray-100 rounded-full px-4 py-2 w-80">
-            <Search className="w-5 h-5 text-gray-400 ml-3" />
+          {/* Luxury Search Bar */}
+          <div className="hidden md:flex items-center bg-gradient-to-r from-gray-50 to-gold-50 rounded-full px-6 py-3 w-96 border border-gold-200 shadow-lg">
+            <Search className="w-5 h-5 text-gold-500 ml-3" />
             <input
               type="text"
-              placeholder="ابحث عن المنتجات..."
-              className="bg-transparent flex-1 outline-none text-right"
+              placeholder="ابحثي عن قطعتك المثالية..."
+              className="bg-transparent flex-1 outline-none text-right placeholder-gray-500 font-medium"
               value={searchQuery}
               onChange={handleSearchChange}
             />
           </div>
 
-          {/* Action Icons */}
-          <div className="flex items-center space-x-4 space-x-reverse">
+          {/* Luxury Action Icons */}
+          <div className="flex items-center space-x-6 space-x-reverse">
             <Link 
               to="/wishlist"
-              className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+              className="relative p-3 hover:bg-gradient-to-r hover:from-rose-50 hover:to-pink-50 rounded-full transition-all duration-300 group"
             >
-              <Heart className="w-6 h-6 text-gray-600" />
+              <Heart className="w-6 h-6 text-gray-600 group-hover:text-rose-500 transition-colors" />
               {wishlistState.items.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-rose-500 to-pink-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold shadow-lg animate-pulse">
                   {wishlistState.items.length}
                 </span>
               )}
             </Link>
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-              <User className="w-6 h-6 text-gray-600" />
+            
+            <button className="p-3 hover:bg-gradient-to-r hover:from-gold-50 hover:to-yellow-50 rounded-full transition-all duration-300 group">
+              <User className="w-6 h-6 text-gray-600 group-hover:text-gold-600 transition-colors" />
             </button>
+            
             <Link 
               to="/bag"
-              className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+              className="relative p-3 hover:bg-gradient-to-r hover:from-gold-50 hover:to-yellow-50 rounded-full transition-all duration-300 group"
             >
-              <ShoppingBag className="w-6 h-6 text-gray-600" />
+              <ShoppingBag className="w-6 h-6 text-gray-600 group-hover:text-gold-600 transition-colors" />
               {state.items.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-gold-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-gradient-to-r from-gold-500 to-yellow-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold shadow-lg animate-pulse">
                   {state.items.length}
                 </span>
               )}
@@ -108,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ onCartClick, onSearchChange }) => {
             
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden p-2"
+              className="lg:hidden p-3 hover:bg-gray-100 rounded-full transition-all duration-300"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -118,65 +136,67 @@ const Header: React.FC<HeaderProps> = ({ onCartClick, onSearchChange }) => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
-            <div className="flex items-center bg-gray-100 rounded-full px-4 py-2 mb-4">
-              <Search className="w-5 h-5 text-gray-400 ml-3" />
+          <div className="lg:hidden py-6 border-t border-gold-100 bg-gradient-to-b from-white to-gold-50">
+            <div className="flex items-center bg-gradient-to-r from-gray-50 to-gold-50 rounded-full px-6 py-3 mb-6 border border-gold-200">
+              <Search className="w-5 h-5 text-gold-500 ml-3" />
               <input
                 type="text"
-                placeholder="ابحث عن المنتجات..."
-                className="bg-transparent flex-1 outline-none text-right"
+                placeholder="ابحثي عن قطعتك المثالية..."
+                className="bg-transparent flex-1 outline-none text-right placeholder-gray-500"
                 value={searchQuery}
                 onChange={handleSearchChange}
               />
             </div>
-            <nav className="flex flex-col space-y-4">
+            <nav className="flex flex-col space-y-6">
               <Link 
                 to="/" 
-                className={`font-medium ${
+                className={`font-medium text-lg ${
                   isActive('/') 
                     ? 'text-gold-600' 
                     : 'text-gray-700 hover:text-gold-600'
-                }`}
+                } transition-colors`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 الرئيسية
               </Link>
               <Link 
                 to="/products" 
-                className={`font-medium ${
+                className={`font-medium text-lg ${
                   isActive('/products') 
                     ? 'text-gold-600' 
                     : 'text-gray-700 hover:text-gold-600'
-                }`}
+                } transition-colors`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                المنتجات
+                مجموعاتنا الفاخرة
               </Link>
               <Link 
                 to="/wishlist" 
-                className={`font-medium ${
+                className={`font-medium text-lg ${
                   isActive('/wishlist') 
                     ? 'text-gold-600' 
                     : 'text-gray-700 hover:text-gold-600'
-                }`}
+                } transition-colors flex items-center justify-between`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                المفضلة ({wishlistState.items.length})
+                <span>مفضلاتي ({wishlistState.items.length})</span>
+                <Heart className="w-5 h-5" />
               </Link>
               <Link 
                 to="/bag" 
-                className={`font-medium ${
+                className={`font-medium text-lg ${
                   isActive('/bag') 
                     ? 'text-gold-600' 
                     : 'text-gray-700 hover:text-gold-600'
-                }`}
+                } transition-colors flex items-center justify-between`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                سلة التسوق ({state.items.length})
+                <span>حقيبة التسوق ({state.items.length})</span>
+                <ShoppingBag className="w-5 h-5" />
               </Link>
-              <a href="/#categories" className="text-gray-700 hover:text-gold-600 font-medium">الفئات</a>
-              <a href="/#about" className="text-gray-700 hover:text-gold-600 font-medium">من نحن</a>
-              <a href="/#location" className="text-gray-700 hover:text-gold-600 font-medium">موقعنا</a>
+              <a href="/#categories" className="text-gray-700 hover:text-gold-600 font-medium text-lg transition-colors">عالم الموضة</a>
+              <a href="/#about" className="text-gray-700 hover:text-gold-600 font-medium text-lg transition-colors">قصتنا</a>
+              <a href="/#location" className="text-gray-700 hover:text-gold-600 font-medium text-lg transition-colors">بوتيكنا</a>
             </nav>
           </div>
         )}
